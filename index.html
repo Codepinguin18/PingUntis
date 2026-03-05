@@ -3,13 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <title>PingUntis Download</title>
-</head>
-<body>
-  <h1>PingUntis Desktop</h1>
-  <p>Klicke auf den Button, um PingUntis_Desktop herunterzuladen.</p>
 
-  <a href="Pinguntis_Desktop.exe" download>
-    <button>Pinguntis_Desktop.exe herunterladen</button>
-  </a>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e9f0ff;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 420px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #003399;
+      margin-bottom: 10px;
+    }
+
+    .infobox {
+      background: #f5f8ff;
+      border-left: 4px solid #003399;
+      padding: 12px;
+      margin: 20px 0;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .download-btn {
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .download-btn:hover {
+      background-color: #005fcc;
+    }
+
+    .features {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .feature {
+      background: #eef3ff;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border-left: 4px solid #005fcc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PingUntis Desktop</h1>
+    <p>Wähle deine Version und lade PingUntis herunter.</p>
+
+    <div class="infobox">
+      <strong>Hinweis:</strong><br>
+      PingUntis funktioniert nur mit gültigen Zugangsdaten deiner Schule.
+    </div>
+
+    <label for="version"><strong>Version auswählen:</strong></label>
+    <select name="Version" id="version">
+        <option value="PingUntis_4.0.exe">PingUntis 4.0</option>
+        <option value="PingUntis_4.0_VPN.exe">PingUntis 4.0 VPN</option>
+    </select>
+
+    <button class="download-btn" onclick="downloadFile()">Download</button>
+
+    <div class="features">
+      <div class="feature">✔ Nachrichten Senden und empfangen</div>
+      <div class="feature">✔ Zugriff auf Schuldaten wie den Stundenplan</div>
+      <div class="feature">✔ Optimiert für Windows 10/11</div>
+    </div>
+  </div>
+
+  <script>
+    function downloadFile() {
+      const version = document.getElementById("version").value;
+      window.location.href = version;
+    }
+  </script>
 </body>
 </html>
